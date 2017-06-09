@@ -8,8 +8,13 @@
 
 <body>
     <script type="module">
-        import {bubbleSort} from './index.js';
-        setTimeout(()=>console.log(bubbleSort([13,3,44],0)),3000)
+
+        import algorithm from './index.js';
+
+        (async function () {
+            var  {bubbleSort} = await algorithm();
+            console.log(bubbleSort([3124,246,1,23,6,7]))
+        })()
     </script>
 </body>
 
