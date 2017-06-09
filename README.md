@@ -3,11 +3,12 @@
 ## Use
 
 ```
-import {bubbleSort} from './index.js';
-let arr = [3,23,5,61,3,64,6,7];
+    import algorithm from './index.js';
 
-// The second param is sort model. 1：ascending, 0：descending.
-bubbleSort(arr,1); 
+    var {bubbleSort} = await algorithm();
+
+    // The second param is sort model. 1：ascending, 0：descending.
+    console.log(bubbleSort([3124,246,1,23,6,7],1))
 ```
 
 Currently, Only have bubble sort.
