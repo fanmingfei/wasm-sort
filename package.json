@@ -1,0 +1,24 @@
+{
+  "name": "wasm-sort",
+  "version": "0.0.1",
+  "description": "Some sort algorithm in WebAssembly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fanmingfei/wasm-sort.git"
+  },
+  "keywords": [
+    "sort",
+    "wasm",
+    "webassembly"
+  ],
+  "author": "fanmingfei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fanmingfei/wasm-sort/issues"
+  },
+  "homepage": "https://github.com/fanmingfei/wasm-sort#readme"
+}
