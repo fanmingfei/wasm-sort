@@ -23,7 +23,7 @@ void bubbleSort (int len, int flag) {
   }
 }
 
-// // 这个插入排序有 BUG
+// // this insertion sort has BUG
 // void insertionSort (int len) {
 //   for (int i = 1; i <= len; i ++) {
 //     for (int j = 0; j < i; j ++) {
