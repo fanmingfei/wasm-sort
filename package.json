@@ -1,6 +1,6 @@
 {
   "name": "wasm-sort",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Some sort algorithm in WebAssembly.",
   "main": "index.js",
   "scripts": {
