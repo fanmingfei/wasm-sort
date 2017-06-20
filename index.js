@@ -3,22 +3,45 @@ import fetchWasm from './utils.js';
 var instanceExports;
 var offset;
 
-var sortsAlgorithm;
+var sortsAlgorithms = {};
 
-
-sortsAlgorithm = {
-    bubbleSort
+var sortAlgorithmNames = [
+    "bubbleSort"
+];
+var sortModel = {
+    asc: 1,
+    desc: 0
 };
 
 function algorithm() {
     if (instanceExports) {
-        return sortsAlgorithm;
+        return sortsAlgorithms;
     }
     return fetchWasm('./wasm/algorithm.wasm', {}).then(instance => {
         instanceExports = instance.exports;
         offset = instanceExports.getArrayOffset();
-        return sortsAlgorithm;
+        return createSortAlgorithms();
     });
+}
+
+function createSortAlgorithms() {
+    let obj = {};
+    sortAlgorithmNames.reduce((s, sortName) => {
+        s[sortName] = createSortFunc(sortName);
+    }, obj);
+    return obj;
+}
+
+function createSortFunc(sortName) {
+    return function(arr, flag) {
+        let _arr = [];
+        flag = flag || sortModel.descending;
+        let mem = sort({ sortName: sortName, arr, flag });
+        for (let o of mem) {
+            _arr.push(o);
+        };
+        return _arr;
+    }
 }
 
 function setArrayBuffer(arr) {
@@ -35,13 +58,6 @@ function sort({ sortName, arr, flag }) {
     return mem;
 }
 
-function bubbleSort(arr, flag) {
-    let _arr = [];
-    flag = flag || 0;
-    for (let o of sort({ sortName: "bubbleSort", arr, flag })) {
-        _arr.push(o);
-    };
-    return _arr;
-}
 
+export { sortModel };
 export default algorithm;

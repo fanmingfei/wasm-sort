@@ -8,12 +8,11 @@
 
 <body>
     <script type="module">
-
         import algorithm from './index.js';
-
-        (async function () {
-            var  {bubbleSort} = await algorithm();
-            console.log(bubbleSort([3124,246,1,23,6,7]))
+        import {sortModel} from './index.js';
+        (async function () {    
+            var {bubbleSort} = await algorithm();
+            console.log(bubbleSort([3124,246,1,23,6,7], sortModel.asc))
         })()
     </script>
 </body>
