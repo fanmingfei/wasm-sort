@@ -20,7 +20,8 @@ function algorithm() {
     return fetchWasm('./wasm/algorithm.wasm', {}).then(instance => {
         instanceExports = instance.exports;
         offset = instanceExports.getArrayOffset();
-        return createSortAlgorithms();
+        sortsAlgorithms = createSortAlgorithms();
+        return sortsAlgorithms;
     });
 }
 
