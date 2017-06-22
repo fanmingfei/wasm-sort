@@ -36,7 +36,7 @@ function createSortAlgorithms() {
 function createSortFunc(sortName) {
     return function(arr, flag) {
         let _arr = [];
-        flag = flag || sortModel.descending;
+        flag = flag || sortModel.desc;
         let mem = sort({ sortName: sortName, arr, flag });
         for (let o of mem) {
             _arr.push(o);
