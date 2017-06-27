@@ -6,10 +6,12 @@
     import algorithm from './index.js';
     import {sortModel} from './index.js';
 
-    var {bubbleSort} = await algorithm();
+    // choose the sort algorithm. Currently, this lib only has bubble sort.
+    const {bubbleSort} = await algorithm();
 
     // The second param is sort model. sortModel.asc, sortModel.desc.
-    console.log(bubbleSort([3124,246,1,23,6,7],sortModel.asc));
+    const result = bubbleSort([3124,246,1,23,6,7],sortModel.asc);
+    console.log(result);
 ```
 
 Currently, Only have bubble sort.
